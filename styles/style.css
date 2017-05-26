@@ -1,0 +1,37 @@
+p {
+    font-size: 16px;
+    font-family: 'Metamorphous', cursive;
+    line-height: 2;
+    letter-spacing: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-shadow: 2px 2px 1px gray;
+}
+
+h1, h3, center {
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    line-height: 2;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 20px 0;
+    text-shadow: 3px 3px 1px gray;
+}
+
+html {
+    background-color: red;
+}
+
+body {
+    width: 900px;
+    margin: 0 auto;
+    background-color: #f4b942;
+    border-color: #000000;
+    border-style: solid;
+}
+
+img {
+    border-style: solid;
+    border-color: #ff4747;
+    border-width: 5px;
+}

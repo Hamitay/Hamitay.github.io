@@ -1,4 +1,4 @@
-p {
+p, numberOfDoggos {
     font-size: 16px;
     font-family: 'Metamorphous', cursive;
     line-height: 2;
@@ -31,7 +31,6 @@ body {
 }
 
 img {
-    border-style: solid;
-    border-color: #ff4747;
-    border-width: 5px;
+    max-width: 900px;
+    max-height: 900px;
 }

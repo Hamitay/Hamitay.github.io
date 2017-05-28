@@ -7,6 +7,11 @@ p, numberOfDoggos {
     
 }
 
+doggoCredits {
+    font-size: 16px;
+    font-style: italic;
+}
+
 h1, h3, center {
     font-size: 24px;
     font-family: 'Inconsolata', monospace;
@@ -15,13 +20,13 @@ h1, h3, center {
 }
 
 html {
-    background-color: red;
+    background-color: #26547C;
 }
 
 body {
     width: 900px;
     margin: 0 auto;
-    background-color: #f4b942;
+    background-color: #FAFF7F;
     border-color: #000000;
     border-style: solid;
 }
@@ -29,4 +34,5 @@ body {
 img {
     max-width: 900px;
     max-height: 900px;
+    padding: 10px 10px 10px;
 }

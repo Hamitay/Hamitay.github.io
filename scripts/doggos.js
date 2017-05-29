@@ -73,8 +73,10 @@ function getContributors() {
             
             var duplicate = false;
             for(j = 0; j < contributors.length; j++) {
-                if(user == contributors[j])
+                if(user == contributors[j]) { 
                     duplicate = true;
+                    break;
+                }
             }
             
             if(!duplicate) {

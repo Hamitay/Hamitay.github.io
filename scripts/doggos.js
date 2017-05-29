@@ -1,6 +1,7 @@
 var myImage = document.querySelector('img');
 var numberOfDoggos = document.querySelector('numberOfDoggos')
 var doggoCredits = document.querySelector('doggoCredits');
+var myContributors = document.querySelector('contributors');
 
 //In case of refactoring of database
 var albumID = 'n2j6O';
@@ -14,13 +15,14 @@ var communityAlbumURL = 'https://api.imgur.com/3/album/' + communityAlbumID + '/
 var doggoArray = JSON.parse(getDoggoAlbumJson(albumURL));
 var communityDoggoArray = JSON.parse(getDoggoAlbumJson(communityAlbumURL));
 
+//Array lengths are extensively used
+var commmunityAlbumSize = communityDoggoArray.data.length;
+var defaultAlbumSize = doggoArray.data.length;
+var totalSize = commmunityAlbumSize+defaultAlbumSize;
+
 function changeDoggo()
-{
-    //Decide which album to use for credits if is a community doggo
-    var commmunityAlbumSize = communityDoggoArray.data.length;
-    var defaultAlbumSize = doggoArray.data.length;
-    var totalSize = commmunityAlbumSize+defaultAlbumSize;
-    //Decide which album to use, the larger the album the most likely it is to be chosen
+{ 
+    //Decide which album to use for credits if is a community doggo, the larger the album the most likely it is to be chosen
     var random = Math.floor ((Math.random() *totalSize)+1);
     //Get content to show on the page
     var doggo;
@@ -59,4 +61,36 @@ function getDoggoNumber() {
 function getDoggo(album) {
     var doggo = album.data[Math.floor(Math.random()*album.data.length)];
     return doggo;
+}
+
+function getContributors() {
+    var contributors = [];
+
+    //Populates the array with the contributors names
+    for(var i = 0; i < commmunityAlbumSize; i ++) {
+        if(i < commmunityAlbumSize) {
+            var user = communityDoggoArray.data[i].description;
+            
+            var duplicate = false;
+            for(j = 0; j < contributors.length; j++) {
+                if(user == contributors[j])
+                    duplicate = true;
+            }
+            
+            if(!duplicate) {
+                contributors.push(user);
+            }
+        }
+    }
+    //Add last contributors, yours truly
+    contributors.push('Hamitay');
+
+    //Creates the list
+    var list = '';
+    for(var i = 0; i < contributors.length; i ++) {
+        list+= '<li><p>' + contributors[i] + '</p></li>';
+    }
+
+    myContributors.innerHTML = '<ul>' + list + '</ul>';
+
 }

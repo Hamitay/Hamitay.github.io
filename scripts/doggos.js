@@ -69,28 +69,28 @@ function getContributors() {
     //Populates the array with the contributors names
     for(var i = 0; i < commmunityAlbumSize; i ++) {
         if(i < commmunityAlbumSize) {
-            var user = communityDoggoArray.data[i].description;
+            var user = {name: communityDoggoArray.data[i].description, n:1}
             
             var duplicate = false;
             for(j = 0; j < contributors.length; j++) {
-                if(user == contributors[j]) { 
+                if(user.name == contributors[j].name) { 
+                    contributors[j].n++;
                     duplicate = true;
-                    break;
                 }
             }
-            
-            if(!duplicate) {
+            if(!duplicate)
                 contributors.push(user);
-            }
         }
     }
-    //Add last contributors, yours truly
-    contributors.push('Hamitay');
+    //Sorts the colection
+    contributors.sort(function(a,b) {
+        return b.n - a.n;
+    });
 
     //Creates the list
     var list = '';
     for(var i = 0; i < contributors.length; i ++) {
-        list+= '<li><p>' + contributors[i] + '</p></li>';
+        list+= '<li><p>' + contributors[i].name + " " + contributors[i].n+ '</p></li>';
     }
 
     myContributors.innerHTML = '<ul>' + list + '</ul>';

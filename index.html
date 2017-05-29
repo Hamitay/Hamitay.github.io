@@ -1,109 +1,123 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <title>Doggo Generator</title>
-            <link href="styles/style.css" rel="stylesheet" type="text/css">
-            <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-        </head>
-        <body onload =  "changeDoggo(); getDoggoNumber(); getContributors();">
-                <div style>
-                    <centerBody>
-                        <center>
-                            <h3><errorTag> Welcome to the Doggo Generator V1.0</errorTag></h3>
-                            <p><i>A project by: <a href="#about">The Doggo Corporation®</a></i></p>
-                            <p>The <b>Doggo Generator</b> is a new tool designed to unite the whole community of the internet on a single purpose, 
-                            to gather the biggest database of doggos pictures on the whole planet! Read our <a href="#FAQ">FAQ</a> to better understand our venture!
-                            <p> 
-                        </center>
-                        <center><solutionTags>Click on the doggo to get another wonderful doggo!</solutionTag></center>
-                        <center><img src="" height="471" width-="360" alt="DOGGO!"></center>
-                        <center><doggoCredits>This doggo was uploaded by</doggoCredits></center>
-                        <br>
-                        <center><numberOfDoggos>We currently have</numberOfDoggos></center>
-                        <br>
-                        <center>
-                            <p> 
-                                Help us to increase our ever-growing database, just send your doggo picture to 
-                                <a href="mailto:doggocorporation@gmail.com" target="_top">doggocorporation@gmail.com</a>
-                                and we will be happy to give proper credit for your contribution!
-                            </p>
-                    </centerBody>
-                </div>
-
-                <p style="font-size: 16px"><b>Our most excellent contributors:</b></p>
-                <contributors>
-                    Contributors
-                </contributors>
-
-                <a name="about"></a> 
-                <p style="font-size: 24px"><b>About us</b></p>
-                <p> We of the The Doggo Corporation® are a team of dreamers and proactive doggo lovers. We created this project to show
-                the whole mankind the power of doggos. </p>
-    
-                <p><b>Our mission:</b>
-                Unite mankind on a single wonderful purpose: the gathering and enjoyment of pictures of the most wonderful
-                creature on the planet.</p>
-                    
-                <p><b>Our vision:</b>
-                To have the largest database of doggos pictures on the planet and to achieve world peace by uniting people on
-                a single purpose.<p>
-
-                <p><b>Our values:</b>
-                    <ul>
-                    <li><p>Every doggo is wonderful.</p></li>
-                    <li><p>A life devoted to doggos is a life well lived.</p></li>
-                    <li><p>There is no such thing as a bad doggo.</p></li>
-                    <li><p>LOL look at how cute puppers are!</p></li>
-                </ul>
-
-                <a name="FAQ"></a> 
-                <p style="font-size: 24px"><b>FAQ:</b></p>
-                    <ul>
-                        <li>
-                            <p><i><b>Why did you do this?</b></i>
-                            <br>Why not? :)</p>
-                        </li>
-                        <li>
-                            <p><i><b>How can I help?</b></i>
-                            <br>You can always upload your best doggos pics to our email. But be aware that a team of highly trained doggo specialists will
-                        check if your picture is really a wonderful doggo and not something naughty ( ͡° ͜ʖ ͡°).
-                        You can also help by spreading the word of our project.</p>
-                        </li>
-                        <li>
-                            <p><i><b>I have this funny cat picture, can I send to you as well?</b></i>
-                            <br>Cats are kewl, they are not doggos though, so <b>no</b>.</p>
-                        </li>
-                        <li>
-                            <p><i><b>Can I help by donating money to this wonderful venture?</b></i>
-                            <br>Nah, our cause transcends the material value of currency.</p>
-                        </li>
-                        <li>
-                            <p><i><b>I found a picture of my doggo. I don't want it here!</b></i>
-                            <br>It saddens us to remove any doggo of our database, however we are aware that some doggos are not
-                            comfortable with the spotlight the internet provides. Just <a href="mailto:doggocorporation@gmail.com" target="_top">email us</a>
-                            and we will promptly remove the picture.</p>
-                        </li>
-                    </ul>
-
-                    <p style="font-size: 24px"><b>Next steps:</b></p>
-                        <ul>
-                            <li>
-                                <p>Set a better infrastructure for our servers, since it is currently hosted on github pages.</p>
-                            </li>
-                            <li>
-                                <p>Set a better infrastructure for our database, by the time of this writing it is hosted on imgur.</p>
-                            </li>
-                            <li>
-                                <p>Create a better visual identity, to help spread our venture across the globe.</p>
-                            </li>
-                            <li>
-                                <p>Improve our UX by providing a better way to upload doggos.</p>
-                            </li>
-                        </ul>
-
-            <script src="scripts/doggos.js"></script>
-            <script src="scripts/main.js"></script>
-        </body>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Doggo Generator</title>
+      <link href="styles/style.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+   </head>
+   <body onload =  "changeDoggo(); getDoggoNumber();">
+      <div style>
+         <centerBody>
+            <center>
+               <h3>
+                  <errorTag> Welcome to the Doggo Generator V1.0</errorTag>
+               </h3>
+               <p><i>A project by: <a href="#about">The Doggo Corporation®</a></i></p>
+               <p>The <b>Doggo Generator</b> is a new tool designed to unite the whole community of the internet on a single purpose, 
+                  to gather the biggest database of doggos pictures on the whole planet! Read our <a href="#FAQ">FAQ</a> to better understand our venture!
+               <p> 
+            </center>
+            <center>
+               <solutionTags>
+               Click on the doggo to get another wonderful doggo!</solutionTag>
+            </center>
+            <center><img src="" height="471" width-="360" alt="DOGGO!"></center>
+            <center>
+               <doggoCredits>This doggo was uploaded by</doggoCredits>
+            </center>
+            <br>
+            <center>
+               <numberOfDoggos>We currently have</numberOfDoggos>
+            </center>
+            <br>
+            <center>
+            <p> 
+               Help us to increase our ever-growing database, just send your doggo picture to 
+               <a href="mailto:doggocorporation@gmail.com" target="_top">doggocorporation@gmail.com</a>
+               and we will be happy to give proper credit for your contribution!
+            </p>
+            <p><a href ="ranking.html">Click here to see our most excelent contributors</a></p>
+         </centerBody>
+      </div>
+      <a name="about"></a> 
+      <p style="font-size: 24px"><b>About us</b></p>
+      <p> We of the The Doggo Corporation® are a team of dreamers and proactive doggo lovers. We created this project to show
+         the whole mankind the power of doggos. 
+      </p>
+      <p><b>Our mission:</b>
+         Unite mankind on a single wonderful purpose: the gathering and enjoyment of pictures of the most wonderful
+         creature on the planet.
+      </p>
+      <p><b>Our vision:</b>
+         To have the largest database of doggos pictures on the planet and to achieve world peace by uniting people on
+         a single purpose.
+      <p>
+      <p><b>Our values:</b>
+      <ul>
+         <li>
+            <p>Every doggo is wonderful.</p>
+         </li>
+         <li>
+            <p>A life devoted to doggos is a life well lived.</p>
+         </li>
+         <li>
+            <p>There is no such thing as a bad doggo.</p>
+         </li>
+         <li>
+            <p>LOL look at how cute puppers are!</p>
+         </li>
+      </ul>
+      <a name="FAQ"></a> 
+      <p style="font-size: 24px"><b>FAQ:</b></p>
+      <ul>
+         <li>
+            <p><i><b>Why did you do this?</b></i>
+               <br>Why not? :)
+            </p>
+         </li>
+         <li>
+            <p><i><b>How can I help?</b></i>
+               <br>You can always upload your best doggos pics to our email. But be aware that a team of highly trained doggo specialists will
+               check if your picture is really a wonderful doggo and not something naughty ( ͡° ͜ʖ ͡°).
+               You can also help by spreading the word of our project.
+            </p>
+         </li>
+         <li>
+            <p><i><b>I have this funny cat picture, can I send to you as well?</b></i>
+               <br>Cats are kewl, they are not doggos though, so <b>no</b>.
+            </p>
+         </li>
+         <li>
+            <p><i><b>Can I help by donating money to this wonderful venture?</b></i>
+               <br>Nah, our cause transcends the material value of currency.
+            </p>
+         </li>
+         <li>
+            <p><i><b>I found a picture of my doggo. I don't want it here!</b></i>
+               <br>It saddens us to remove any doggo of our database, however we are aware that some doggos are not
+               comfortable with the spotlight the internet provides. Just <a href="mailto:doggocorporation@gmail.com" target="_top">email us</a>
+               and we will promptly remove the picture.
+            </p>
+         </li>
+      </ul>
+      <p style="font-size: 24px"><b>Next steps:</b></p>
+      <ul>
+         <li>
+            <p>Set a better infrastructure for our servers, since it is currently hosted on github pages.</p>
+         </li>
+         <li>
+            <p>Set a better infrastructure for our database, by the time of this writing it is hosted on imgur.</p>
+         </li>
+         <li>
+            <p>Create a better visual identity, to help spread our venture across the globe.</p>
+         </li>
+         <li>
+            <p>Improve our UX by providing a better way to upload doggos.</p>
+         </li>
+      </ul>
+      <script src="scripts/doggos.js"></script>
+      <script src="scripts/main.js"></script>
+   </body>
 </html>

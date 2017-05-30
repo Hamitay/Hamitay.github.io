@@ -20,22 +20,38 @@ var commmunityAlbumSize = communityDoggoArray.data.length;
 var defaultAlbumSize = doggoArray.data.length;
 var totalSize = commmunityAlbumSize+defaultAlbumSize;
 
+function zuckerSensor()
+{
+    //Sees if user is a slave of zuckerberg
+    var ua = navigator.userAgent || navigator.vendor|| window.opera;
+    return((ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV" > -1))) 
+}
+
 function changeDoggo()
 { 
-    //Decide which album to use for credits if is a community doggo, the larger the album the most likely it is to be chosen
-    var random = Math.floor ((Math.random() *totalSize)+1);
-    //Get content to show on the page
-    var doggo;
-    var album;
-    (random < defaultAlbumSize) ? album = doggoArray : album = communityDoggoArray;
-    doggo = getDoggo(album);
-    myImage.setAttribute ('src', doggo.link);
-    //Give proper credit
-    if(album==doggoArray) {
-        doggoCredits.innerHTML = 'This doggo was uploaded by: <b>Hamitay</b>'; 
+    //Confirms if browser is not a pesky facebook one
+    var isZuckerberg = zuckerSensor();
+
+    if(isZuckerberg){
+        myImage.setAttribute('src', 'images/zuckerberg.jpg');
+        alert('Zuckerberg');
+
     } else {
-        doggoCredits.innerHTML = 'This doggo was uploaded by: <b>' + doggo.description + "</b>";
-    }
+        //Decide which album to use for credits if is a community doggo, the larger the album the most likely it is to be chosen
+        var random = Math.floor ((Math.random() *totalSize)+1);
+        //Get content to show on the page
+        var doggo;
+        var album;
+        (random < defaultAlbumSize) ? album = doggoArray : album = communityDoggoArray;
+        doggo = getDoggo(album);
+        myImage.setAttribute ('src', doggo.link);
+        //Give proper credit
+        if(album==doggoArray) {
+            doggoCredits.innerHTML = 'This doggo was uploaded by: <b>Hamitay</b>'; 
+        } else {
+            doggoCredits.innerHTML = 'This doggo was uploaded by: <b>' + doggo.description + "</b>";
+        }
+    }    
 }
 
 function getDoggoAlbumJson(theUrl) {

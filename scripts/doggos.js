@@ -20,22 +20,32 @@ var commmunityAlbumSize = communityDoggoArray.data.length;
 var defaultAlbumSize = doggoArray.data.length;
 var totalSize = commmunityAlbumSize+defaultAlbumSize;
 
+function isFacebookApp() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+}
 
 function changeDoggo()
 { 
-    //Decide which album to use for credits if is a community doggo, the larger the album the most likely it is to be chosen
-    var random = Math.floor ((Math.random() *totalSize)+1);
-    //Get content to show on the page
-    var doggo;
-    var album;
-    (random < defaultAlbumSize) ? album = doggoArray : album = communityDoggoArray;
-    doggo = getDoggo(album);
-    myImage.setAttribute ('src', doggo.link);
-    //Give proper credit
-    if(album==doggoArray) {
-        doggoCredits.innerHTML = 'This doggo was uploaded by: <b>Hamitay</b>'; 
+    if(isFacebookApp()) {
+        myImage.setAttribute ('src', 'images/zuckerberg.jpg');
+        doggoCredits.innerHTML = 'It seems you are using that pesky Facebook/Messenger in-app browser. Unfortunaly Uncle Mark is <br> not very nice' +
+        ', but don\'t fret! You can simply use <b>Google Chrome/Safari</b> on your phone and Doggo Generator will work just <b>fine</b>';
     } else {
-        doggoCredits.innerHTML = 'This doggo was uploaded by: <b>' + doggo.description + "</b>";
+        //Decide which album to use for credits if is a community doggo, the larger the album the most likely it is to be chosen
+        var random = Math.floor ((Math.random() *totalSize)+1);
+        //Get content to show on the page
+        var doggo;
+        var album;
+        (random < defaultAlbumSize) ? album = doggoArray : album = communityDoggoArray;
+        doggo = getDoggo(album);
+        myImage.setAttribute ('src', doggo.link);
+        //Give proper credit
+        if(album==doggoArray) {
+            doggoCredits.innerHTML = 'This doggo was uploaded by: <b>Hamitay</b>'; 
+        } else {
+            doggoCredits.innerHTML = 'This doggo was uploaded by: <b>' + doggo.description + "</b>";
+        }
     }
 }
 
